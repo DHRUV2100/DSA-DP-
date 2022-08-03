@@ -62,6 +62,21 @@ public class Main {
         int[] dp = new int[n + 1];
         // System.out.println(maxSumNonAdjacentSS(arr, 0));
         // System.out.println(maxSumNonAdjacentSSMem(arr, 0, dp));
-        System.out.println(maxSumNonAdjacentSSTab(arr, dp));
+        // System.out.println(maxSumNonAdjacentSSTab(arr, dp));
+        //space optimisation
+        int next2=0;
+        int next1=arr[arr.length-1];
+        int curr=0;
+        for(int i=arr.length-2;i>=0;i--){
+            //yes
+            int ans1=next2+arr[i];
+            //no
+            int ans2=next1;
+            curr=Math.max(ans1, ans2);
+            //update
+            next2=next1;
+            next1=curr;
+        }
+        System.out.println(curr);
     }
 }
