@@ -49,7 +49,7 @@ public class Main {
     public static int maxValueUnderKnapSackTabu(int capacity, int[] wt, int[] val) {
         int[][] dp = new int[wt.length][capacity + 1];
         for (int i = 0; i < dp.length; i++) {
-            for (capacity = 0; capacity < dp[0].length; j++) {
+            for (capacity = 0; capacity < dp[0].length; capacity++) {
                 // bc
                 if (i == 0) {
                     if (capacity - wt[i] >= 0)
